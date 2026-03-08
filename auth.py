@@ -60,6 +60,13 @@ def get_profile(access_token: str) -> dict:
 
     return response
 
+def logout(access_token: str) -> dict:
+    """
+    Invalidate the user's access token (log out).
+    """
+    response = lr.authentication.auth_in_validate_access_token(access_token)
+    return response
+
 def forgot_password(email: str, reset_url: str = "https://yourapp.com/reset") -> dict:
     """
     Send a password reset email to user.
